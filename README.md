@@ -1,5 +1,6 @@
+
 # Windows-basic-commands-batchscript
-Ex08-Windows-basic-commands-batchscript
+### Ex08- Windows-basic-commands-batchscript
 
 # AIM:
 To execute Windows basic commands and batch scripting
@@ -12,113 +13,99 @@ Navigate to any Windows environment installed on the system or installed inside 
 
 ### Step 2:
 
-Write the Windows commands / batch file . Save each script in a file with a .bat extension. Ensure you have the necessary permissions to perform the operations. Adapt paths as needed based on your system configuration.
+Write the Windows commands / batch file
+Save each script in a file with a .bat extension.
+Ensure you have the necessary permissions to perform the operations.
+Adapt paths as needed based on your system configuration.
 ### Step 3:
 
 Execute the necessary commands/batch file for the desired output. 
 
-
-
-
 # WINDOWS COMMANDS:
 ## Exercise 1: Basic Directory and File Operations
-Create a directory named "my-folder"
+Create a directory named "MyLab" on the desktop.
+## COMMAND AND OUTPUT
+~~~
+mkdir %userprofile%\Desktop\MyLab
+~~~
+
+![image](https://github.com/user-attachments/assets/4b10cf39-f1b6-40e4-8883-6d300da4c572)
+
+Change to the "MyLab" directory and create an empty text file named "MyFile.txt" inside it.
 
 ## COMMAND AND OUTPUT
+~~~
+cd %userprofile%\Desktop\MyLab
+~~~
 
-Remove the directory "my-folder"
+![image](https://github.com/user-attachments/assets/7c27a8ef-b782-4005-a896-51a0fd0b8d4a)
+
+~~~
+type nul > MyFile.txt
+~~~
+
+![image](https://github.com/user-attachments/assets/5a0d5b07-b885-47aa-8733-5541631d360b)
+
+List the contents of the "MyLab" directory.
+
 
 ## COMMAND AND OUTPUT
+~~~
+dir %userprofile%\Desktop\MyLab
+~~~
+
+![image](https://github.com/user-attachments/assets/f513ef50-08b6-4a92-9257-9cfcbaffa69b)
 
 
-Create the file Rose.txt
-
-## COMMAND AND OUTPUT
-
-
-Create the file hello.txt using echo and redirection
-
-## COMMAND AND OUTPUT
-
-Copy the file hello.txt into the file hello1.txt
+Copy "MyFile.txt" to a new folder named "Backup" on the desktop.
 
 ## COMMAND AND OUTPUT
+~~~
+mkdir %userprofile%\Desktop\Backup
+~~~
+![329659806-7a228e90-8940-43be-8231-4766db062bb7](https://github.com/04Varsha/Windows-basic-commands-batchscript/assets/149035374/64b3d1fb-6b15-47d7-b449-18d1df73456e)
+~~~
+copy MyFile.txt %userprofile%\Desktop\Backup
+~~~
+![329659991-e045c571-5703-455a-8d32-9aa6b2a2afde](https://github.com/04Varsha/Windows-basic-commands-batchscript/assets/149035374/6a48ce78-88e9-4a7e-a2e5-8ece42f7311e)
 
-Remove the file hello1.txt
-
-## COMMAND AND OUTPUT
-
-List out the file hello1.txt in the current directory
-
-## COMMAND AND OUTPUT
-
-List out all the associated file extensions 
-
-## COMMAND AND OUTPUT
-
-
-Compare the file hello.txt and rose.txt
+Move the "MyLab" directory to the "Documents" folder.
 
 ## COMMAND AND OUTPUT
+~~~
+mkdir %userprofile%\Desktop\Documents
+move MyLab Documents
+~~~
+![329660496-6b0dcb2a-0b98-4712-ac5a-4d558ca37037](https://github.com/04Varsha/Windows-basic-commands-batchscript/assets/149035374/1b3b3dfc-19ad-4574-98e2-e28bd46533f1)
+
+
+
 
 ## Exercise 2: Advanced Batch Scripting
-Create a batch file named on the desktop. The batch file need to have a variable assigned with a desired name for ex. name="John" and display as "Hello, John".
-
-
-
-
-
+Create a batch script named "BackupScript.bat" that creates a backup of files with the ".docx" extension from the "Documents" folder to a new folder named "DocBackup" on the desktop.
+## COMMAND:
+~~~
+@echo off
+mkdir %userprofile%\Desktop\DocBackup
+copy %userprofile%\Documents\*.docx %userprofile%\Desktop\DocBackup
+echo Backup completed successfully!
+~~~
+![329660834-0594a6df-84d8-4328-a347-5e6ca215a41c](https://github.com/04Varsha/Windows-basic-commands-batchscript/assets/149035374/759f68b0-4717-4bea-9e37-4f8bc436e3b6)
+## COMMAND:
+~~~
+@echo off
+mkdir %userprofile%\Desktop\DocBackup
+copy %userprofile%\Documents\*.docx %userprofile%\Desktop\DocBackup
+del %userprofile%\Documents\*.docx
+echo Backup and deletion completed successfully!
+~~~
 ## OUTPUT
+![329661256-27953f04-f5d1-4b1f-a369-60b6cb1d90e1](https://github.com/04Varsha/Windows-basic-commands-batchscript/assets/149035374/c3bd3e5a-2d4b-4db4-b681-8557bc05d5c6)
 
-
-
-Create a batch file  on the desktop that checks whether a user-input number is odd or not. The script should:
-Prompt the user to enter a number.
-Calculate the remainder when the number is divided by 2.
-Display whether the number is odd or not.
-Ask the user if they want to check another number.
-Repeat the process if the user enters Y, and exit with a thank-you message if the user enters N.
-Handle invalid inputs for the continuation prompt (Y/N) gracefully.
-
-
-
-## OUTPUT
-
-
-
-
-Write a batch file that uses a FOR loop to iterate over a sequence of numbers (1 to 5) and displays each number with the label Number:. The output should pause at the end.
-
-
-
-
-## OUTPUT
-
-
-
-
-Write a batch script to check whether a file named sample.txt exists in the current directory. If the file exists, display the message sample.txt exists. Otherwise, display sample.txt does not exist. Pause the script at the end to view the result.
-
-Instructions:
-Use the IF EXIST conditional statement.
-Make sure the script works for files located in the same directory as the batch file.
-Use pause to keep the command window open after displaying the message.
-Expected Output (if the file exists):
-
-## OUTPUT
-
-
-Write a batch script that displays a simple menu with three options:
-Say Hello – Displays the message Hello, World!
-Create a File – Creates a file named newfile.txt with the content This is a new file
-Exit – Exits the script with a goodbye message
-The script should repeatedly display the menu until the user chooses to exit. Use goto statements to handle menu navigation.
-
-
-## OUTPUT
-
-
-
-# RESULT:
+## RESULT:
 The commands/batch files are executed successfully.
+
+
+
+
 
